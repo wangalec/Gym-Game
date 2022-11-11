@@ -28,9 +28,28 @@ int main(){
     cout << testNPC.getName() << endl;
     testNPC.setVoicelineAt(0, "Hi");
     cout << testNPC.getVoicelineAt(0) << endl;
+
+    //Testing food class
+    Food testFood;
+    testFood.setName("whey");
+    cout << testFood.getName() << endl;
+    testFood.setProtein(24);
+    cout << testFood.getProtein() << endl;
+    testFood.setCalories(120);
+    cout << testFood.getCalories() << endl;
+
+    //Testing exercises class
+    Exercises testExercises("bench", "chest", 135);
+    cout << testExercises.getName() << endl;
+    cout << testExercises.getBodypart() << endl;
+    cout << testExercises.getWeight() << endl;
+    testExercises.setName("squat");
+    testExercises.setBodypart("legs");
+    testExercises.setWeight(225);
+    cout << testExercises.getName() << endl;
+    cout << testExercises.getBodypart() << endl;
+    cout << testExercises.getWeight() << endl;
 }
-
-
 
     //menu
     //each day has certain amount of times they can use it, 

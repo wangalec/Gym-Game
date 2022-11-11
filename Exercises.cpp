@@ -1,13 +1,48 @@
 #include <iostream>
 using namespace std;
 
-class Exercises{
-    private:
-    string name_;
-    string bodypart_;
-    int weight_;
+#include "Exercises.h"
 
-    public:
-};
+Exercises::Exercises()
+{
+    name_ = "";
+    bodypart_ = "";
+    weight_ = 0;
+}
 
-//bench, squat, DL, OHP
+Exercises::Exercises(string name, string bodypart, int weight)
+{
+    name_ = name;
+    bodypart_ = bodypart;
+    weight_ = weight;
+}
+
+string Exercises::getName()
+{
+    return name_;
+}
+
+void Exercises::setName(string name)
+{
+    name_ = name;
+}
+
+string Exercises::getBodypart()
+{
+    return bodypart_;
+}
+
+void Exercises::setBodypart(string bodypart)
+{
+    bodypart_ = bodypart;
+}
+
+int Exercises::getWeight()
+{
+    return weight_;
+}
+
+void Exercises::setWeight(int weight)
+{
+    weight_ = weight;
+}
