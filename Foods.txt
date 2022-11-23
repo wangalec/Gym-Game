@@ -1,5 +1,5 @@
-chicken
-burger
-vegetables
-milk
-eggs
+milk,3
+burger,2
+chicken,2
+eggs,1
+vegetables,-5

@@ -1,0 +1,10 @@
+Squat,6
+Bench Press,5
+Deadlift,5
+Overhead Press,5
+Dumbbell Curls,3
+Incline Fly,3
+Cabel Pull,2
+Lateral Raises,2
+Hammer Curls,2
+Crunches,1
