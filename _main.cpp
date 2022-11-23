@@ -45,9 +45,23 @@ int main(){
                 map.move(input);
             }
 
-            else if (input == 2)
+            //RANDOM COMPONENT
+            else if (input == 2) //investigate
             {
-
+                random_num = rand() %4;
+                if (random_num == 0){
+                    cout << "You have found nothing. Keep grinding brah don't give up" << endl;
+                }
+                else if (random_num == 1){
+                    cout << "You have discovered a new food!" << endl;
+                }
+                else if (random_num == 2){
+                    cout << "You have discovered a new exercise!" << endl;
+                }
+                else if (random_num == 4){
+                    cout << "You have met an NPC!" << endl;
+                }
+                map.exploreSpace();
             }
 
             else if (input == 3)

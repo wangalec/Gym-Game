@@ -7,9 +7,7 @@ using namespace std;
 class Player{
     private:
     string name_;
-    int health_;
     int strength_;
-    int weight_;
 
     public:
     Player();

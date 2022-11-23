@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-class Discoveries{
+class ExerciseDiscoveries{
     
     private: 
     Food foods_[5]; 
@@ -40,22 +40,22 @@ class Discoveries{
 };
 
 //adds to found exercises 
-string Discoveries::getExerciseName(int index){
+string ExerciseDiscoveries::getExerciseName(int index){
     return found_exercises_[index].getName();
 }
 
-int Discoveries::getExerciseStrength(int index){
+int ExerciseDiscoveries::getExerciseStrength(int index){
     return found_exercises_[index].getStrength();
 }
 
-bool Discoveries::addExercise(string name, int strength){
+bool ExerciseDiscoveries::addExercise(string name, int strength){
     if(num_exercises_found_ > 10) return false;
     found_exercises_[num_exercises_found_] = Exercises(name, strength);
     num_exercises_found_++;
 }
 
 //adds to exercises array
-int Discoveries::readExercises(string filename){
+int ExerciseDiscoveries::readExercises(string filename){
     if (num_exercises_ == 10) return -1;
     string line;
     ifstream input;
