@@ -8,12 +8,6 @@ using namespace std;
 class ExerciseDiscoveries{
     
     private: 
-    Food foods_[5]; 
-    int num_foods_;
-
-    Food found_foods_[5];
-    int num_foods_found_;
-
     //possbile exercises
     Exercises exercises_[10];
     int num_exercises_;
