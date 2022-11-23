@@ -7,18 +7,19 @@ using namespace std;
 class Exercises{
     private:
     string name_;
-    string bodypart_;
-    int weight_;
+    int strength_;
 
     public:
     Exercises();
-    Exercises(string name, string bodypart, int weight);
+    Exercises(string name, int strength);
     string getName();
     void setName(string name);
-    string getBodypart();
-    void setBodypart(string bodypart);
-    int getWeight();
-    void setWeight(int weight);
+    int getStrength();
+    void setStrength(int strength);
+    // string getBodypart();
+    // void setBodypart(string bodypart);
+    // int getWeight();
+    // void setWeight(int weight);
 
 };
 
