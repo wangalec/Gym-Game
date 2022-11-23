@@ -7,7 +7,7 @@ using namespace std;
 #include "Player.h"
 #include "Map.h"
 
-void menu()
+void displayMap()
 { //menu function
     cout << "----Main Menu----" << endl;
     cout << "1. Move" << endl;
@@ -26,36 +26,36 @@ int main(){
 
 while (isTrue == 1)
 {
-    menu(); 
+    displayMap(); 
     cin >> input; 
     cin.ignore(32767, '\n'); // ignores 32767 characters so that input can be changeable 
         
-        if (input == 1)
+        if (input == 1) //move
         {
         
         } 
 
-        else if (input == 2)
+        else if (input == 2) // investigate
         {
 
         }
 
-        else if (input == 3)
+        else if (input == 3) // eat
         {
 
         }
 
-        else if (input == 4)
+        else if (input == 4) // exercise
         {
 
         }
 
-        else if (input == 5)
+        else if (input == 5) // display stats
         {
-
+            cout << "Your current strength is " << xxx << " keep eating and training to increase strength!" << endl;
         }
 
-        else if (input == 6)
+        else if (input == 6) // give up!
         {
             cout << "ZYZZ is disappointed you gave up. Come back soon to complete your training." << endl;
             isTrue = 0;
