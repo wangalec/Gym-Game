@@ -7,7 +7,7 @@ using namespace std;
 #include "Player.h"
 #include "Map.h"
 
-void displayMap()
+void menu()
 { //menu function
     cout << "----Main Menu----" << endl;
     cout << "1. Move" << endl;
@@ -21,50 +21,61 @@ void displayMap()
 int main(){
     Map map;
     map.displayMap();
+
     bool isTrue = 1;
     int input;
 
-while (isTrue == 1)
-{
-    displayMap(); 
-    cin >> input; 
-    cin.ignore(32767, '\n'); // ignores 32767 characters so that input can be changeable 
-        
-        if (input == 1) //move
-        {
-        
-        } 
+    while (true)
+    {
+        menu(); 
+        cin >> input; 
+        //cin.ignore(32767, '\n'); // ignores 32767 characters so that input can be changeable 
+            
+            if (input == 1)//move
+            {   
+                while (true)
+                {
+                    char move_input;
+                    cout << "Use wasd to move" << endl;
+                    cin >> move_input;
+                    if (move_input == 'w' || move_input == 'a' || move_input == 's' || move_input == 'd') {
+                        break;
+                    }
+                }
+                map.move(input);
+            }
 
-        else if (input == 2) // investigate
-        {
+            else if (input == 2)
+            {
 
-        }
+            }
 
-        else if (input == 3) // eat
-        {
+            else if (input == 3)
+            {
 
-        }
+            }
 
-        else if (input == 4) // exercise
-        {
+            else if (input == 4)
+            {
 
-        }
+            }
 
-        else if (input == 5) // display stats
-        {
-            cout << "Your current strength is " << xxx << " keep eating and training to increase strength!" << endl;
-        }
+            else if (input == 5)
+            {
 
-        else if (input == 6) // give up!
-        {
-            cout << "ZYZZ is disappointed you gave up. Come back soon to complete your training." << endl;
-            isTrue = 0;
-        }
+            }
 
-        else 
-        {
-            cout << "What the Fuark brah? Enter a number between 1 and 6!" << endl;
-            input;
-        }
-}
+            else if (input == 6)
+            {
+                cout << "ZYZZ is disappointed you gave up. Come back soon to complete your training." << endl;
+                break;
+            }
+
+            else 
+            {
+                cout << "What the Fuark brah? Enter a number between 1 and 6!" << endl;
+                input;
+            }
+    }
+    return 0;
 }
