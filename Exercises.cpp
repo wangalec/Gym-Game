@@ -6,15 +6,17 @@ using namespace std;
 Exercises::Exercises()
 {
     name_ = "";
-    bodypart_ = "";
-    weight_ = 0;
+    strength_ = 0;
+    // bodypart_ = "";
+    // weight_ = 0;
 }
 
-Exercises::Exercises(string name, string bodypart, int weight)
+Exercises::Exercises(string name, int strength)
 {
     name_ = name;
-    bodypart_ = bodypart;
-    weight_ = weight;
+    strength_ = strength;
+    // bodypart_ = bodypart;
+    // weight_ = weight;
 }
 
 string Exercises::getName()
@@ -27,22 +29,31 @@ void Exercises::setName(string name)
     name_ = name;
 }
 
-string Exercises::getBodypart()
-{
-    return bodypart_;
+int Exercises::getStrength(){
+    return strength_;
 }
 
-void Exercises::setBodypart(string bodypart)
-{
-    bodypart_ = bodypart;
+void Exercises::setStrength(int strength){
+    strength_ = strength;
 }
 
-int Exercises::getWeight()
-{
-    return weight_;
-}
 
-void Exercises::setWeight(int weight)
-{
-    weight_ = weight;
-}
+// string Exercises::getBodypart()
+// {
+//     return bodypart_;
+// }
+
+// void Exercises::setBodypart(string bodypart)
+// {
+//     bodypart_ = bodypart;
+// }
+
+// int Exercises::getWeight()
+// {
+//     return weight_;
+// }
+
+// void Exercises::setWeight(int weight)
+// {
+//     weight_ = weight;
+// }
