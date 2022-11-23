@@ -63,7 +63,7 @@ while (isTrue == 1)
 
         else 
         {
-            cout << "What the Fuark brah? That's not a number between 1 and 6!" << endl;
+            cout << "What the Fuark brah? Enter a number between 1 and 6!" << endl;
             input;
         }
 }
