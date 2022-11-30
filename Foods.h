@@ -1,8 +1,6 @@
 #ifndef FOODS_H
 #define FOODS_H
 
-#include "Food.h"
-
 #include <iostream>
 using namespace std;
 

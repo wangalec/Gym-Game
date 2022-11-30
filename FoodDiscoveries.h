@@ -1,7 +1,7 @@
 #ifndef FOODS_D_H
 #define FOODS_D_H
 
-#include "Food.h"
+#include "Foods.h"
 #include "Exercises.h"
 
 #include <fstream>
