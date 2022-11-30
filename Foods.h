@@ -8,14 +8,17 @@ using namespace std;
 
 class Foods
 {
-    private: 
-    const int food_count = 5;
-    Food foods_[food_count]; 
-    int num_foods_;
+    private:
+    string name_;
+    int strength_;
 
-    public: 
-    int getNumFoods(string);
-    void setNumFoods(string);
+    public:
+    Foods();
+    Foods(string name, int strength);
+    string getName();
+    void setName(string name);
+    int getStrength();
+    void setStrength(int strength);
 };
 
 #endif

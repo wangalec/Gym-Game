@@ -3,12 +3,33 @@ using namespace std;
 
 #include "Foods.h"
 
+
 Foods::Foods()
 {
-    num_foods_ = 0;
+    name_ = "";
+    strength_ = 0;
 }
 
-int Foods::getNumFoods()
+Foods::Foods(string name, int strength)
 {
-    return num_foods_
+    name_ = name;
+    strength_ = strength;
+}
+
+string Foods::getName()
+{
+    return name_;
+}
+
+void Foods::setName(string name)
+{
+    name_ = name;
+}
+
+int Foods::getStrength(){
+    return strength_;
+}
+
+void Foods::setStrength(int strength){
+    strength_ = strength;
 }
