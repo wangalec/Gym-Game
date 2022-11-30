@@ -15,3 +15,12 @@ string Food::getName(){
 void Food::setName(string name){
     name_ = name;
 }
+
+int Food::getStrength(){
+    return strength_;
+}
+
+
+void Food::setStrength(int strength){
+    strength_ = strength;
+}
