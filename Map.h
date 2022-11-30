@@ -57,9 +57,9 @@ public:
     void displayMap();
     bool move(char);
     // bool addNPC(int row, int col);
-    bool addRoom(int row, int col);
+    //bool addRoom(int row, int col);
     // bool removeNPC(int row, int col);
-    bool removeRoom(int row, int col);
+    //bool removeRoom(int row, int col);
     void exploreSpace(int row, int col);
 };
 

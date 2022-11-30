@@ -11,15 +11,15 @@ class Player{
 
     public:
     Player();
-    Player(string name, int health, int strength, int weight);
+    Player(string name, int strength);
     string getName();
     void setName(string name);
-    int getHealth();
-    void setHealth(int health);
+    // int getHealth();
+    // void setHealth(int health);
     int getStrength();
     void setStrength(int strength);
-    int getWeight();
-    void setWeight(int weight);
+    // int getWeight();
+    // void setWeight(int weight);
 };
 
 #endif
