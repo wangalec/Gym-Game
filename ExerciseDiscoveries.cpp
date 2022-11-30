@@ -40,6 +40,10 @@ string ExerciseDiscoveries::getAvailExerciseName(int index){
     return exercises_[index].getName();
 }
 
+int ExerciseDiscoveries::getAvailExerciseStrength(int index){
+    return exercises_[index].getStrength();
+}
+
 int ExerciseDiscoveries::readExercises(string filename){
     if (num_exercises_ == 10) return -1;
     string line;

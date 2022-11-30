@@ -18,6 +18,8 @@ How did you prepare for the project?
 How did you develop our code skeleton? In what way(s) did you use your code skeleton?
 Reflect on how you could have done better or how you could have completed the project faster or more efficiently?
 
+Better ways: use vectors
+
 In addition, write a paragraph answering the following question, in the context of the Project in CSCI 1300: 
 Did you have any false starts, or begin down a path only to have to turn back when figuring out the strategy/
 algorithm for your Final Project program? Describe in detail what happened, for example, what specific decision 
@@ -25,3 +27,4 @@ led you to the false starts, or, if not, why do you think your work had progress
 In either case, give a specific example.
 
 False starts: classes for food/exercises, ended up shortening 
+

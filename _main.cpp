@@ -9,7 +9,6 @@ using namespace std;
 #include "Player.h"
 #include "Map.h"
 
-
 void menu()
 { //menu function
     cout << "----Main Menu----" << endl;
@@ -39,6 +38,9 @@ int main(){
     // player.setName(input_name);
 
     int input;
+
+    int exercise_tracker = 0;
+    int food_tracker = 0;
     while (true)
     {
         if(player.getStrength() >= 100){
@@ -67,8 +69,12 @@ int main(){
         //RANDOM COMPONENT
         else if (input == 2) //investigate
         {
-            int random_num = rand()%4;
+            int random_num = rand()%3;
+
+            //testing
+            random_num = 2;
             cout << random_num << endl;
+
             if (random_num == 0){
                 cout << "You have found nothing. Keep grinding brah don't give up" << endl;
             }
@@ -77,10 +83,14 @@ int main(){
             }
             else if (random_num == 2){
                 cout << "You have discovered a new exercise!" << endl;
+                string name = exercises.getAvailExerciseName(exercise_tracker);
+                int strength = exercises.getAvailExerciseStrength(exercise_tracker);
+                exercises.addExercise(name, strength);
+                exercise_tracker++;
             }
-            else if (random_num == 3){
-                cout << "You have met an NPC!" << endl;
-            }
+            // else if (random_num == 3){
+            //     cout << "You have met an NPC!" << endl;
+            // }
             map.exploreSpace(map.getPlayerRow(), map.getPlayerCol());
         }
 
@@ -127,6 +137,7 @@ int main(){
         else 
         {
             cout << "What the Fuark brah? Enter a number between 1 and 6!" << endl;
+            cin >> input;
         }
     }
 

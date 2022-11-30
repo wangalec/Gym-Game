@@ -45,6 +45,7 @@ public:
     
     //read exersises into exercises array
     string getAvailExerciseName(int index);
+    int getAvailExerciseStrength(int index);
     int readExercises(string filename); 
 
 };
