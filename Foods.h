@@ -16,6 +16,6 @@ class Foods
     public: 
     int getNumFoods(string);
     void setNumFoods(string);
-}
+};
 
 #endif
