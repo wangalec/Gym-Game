@@ -28,7 +28,7 @@ int FoodDiscoveries::getFoodStrength(int index){
 
 bool FoodDiscoveries::addFoods(string name, int strength){
     if(num_foods_found_ > 5) return false;
-    found_foods_[num_foods_found_] = Food(name, strength);
+    found_foods_[num_foods_found_] = Foods(name, strength);
     num_foods_found_++;
     return true;
 }

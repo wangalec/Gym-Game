@@ -12,10 +12,10 @@ class FoodDiscoveries
 {
     private: 
     //possible founds
-    Food foods_[5]; 
+    Foods foods_[5]; 
     int num_foods_;
 
-    Food found_foods_[5];
+    Foods found_foods_[5];
     //found foods that the player can use to gain strength
     int num_foods_found_;
 
