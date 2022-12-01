@@ -5,9 +5,13 @@ using namespace std;
 //#include "Food.h"
 
 #include "ExerciseDiscoveries.h"
+#include "FoodDiscoveries.h"
 #include "NPC.h"
 #include "Player.h"
 #include "Map.h"
+//#include "finalbattle.h"
+
+
 
 void menu()
 { //menu function
@@ -24,9 +28,11 @@ int main(){
     //initializing all classes for use
     Map map;
     ExerciseDiscoveries exercises;
+    FoodDiscoveries foods;
     Player player;
 
     int result = exercises.readExercises("exercises.txt");
+    foods.readFoods("Foods.txt");
     // cout << result << endl;
     // for(int i = 0; i < 10; i++){
     //     cout << i << exercises.getAvailExerciseName(i) << endl;
@@ -38,9 +44,9 @@ int main(){
     // player.setName(input_name);
 
     int input;
-
     int exercise_tracker = 0;
     int food_tracker = 0;
+
     while (true)
     {
         if(player.getStrength() >= 100){
@@ -72,16 +78,26 @@ int main(){
             int random_num = rand()%3;
 
             //testing
-            random_num = 2;
-            cout << random_num << endl;
+            //random_num = 2;
+            //cout << random_num << endl;
 
             if (random_num == 0){
                 cout << "You have found nothing. Keep grinding brah don't give up" << endl;
             }
             else if (random_num == 1){
+                if (food_tracker == 5){
+                    cout << "You have discovered all foods! Keep it up!" << endl;
+                }
                 cout << "You have discovered a new food!" << endl;
+                string name = foods.getAvailFoodName(food_tracker);
+                int strength = foods.getAvailFoodStrength(food_tracker);
+                foods.addFoods(name, strength);
+                food_tracker++;
             }
             else if (random_num == 2){
+                if(exercise_tracker == 10){
+                    cout << "You have discovered all exercises! Keep it up!" << endl;
+                }
                 cout << "You have discovered a new exercise!" << endl;
                 string name = exercises.getAvailExerciseName(exercise_tracker);
                 int strength = exercises.getAvailExerciseStrength(exercise_tracker);
@@ -96,7 +112,22 @@ int main(){
 
         else if (input == 3) //eat
         {
-            
+            int num_foods = foods.getNumFoodsFound();
+            if(num_foods == 0){
+                cout << "No foods yet. Explore the map to find new foods!" << endl;
+            }
+            else{
+                int fd_input;
+                cout << "Pick a food: " << endl;
+                for(int i = 0; i < num_foods; i++){
+                    cout << i+1 << " . " << foods.getFoodName(i)
+                    << " | " << foods.getFoodStrength(i);
+                }
+                cin >> fd_input;
+                int new_strength = player.getStrength();
+                new_strength += foods.getFoodStrength(fd_input - 1);
+                player.setStrength(new_strength);
+            }
         }
 
         else if (input == 4) //train
@@ -125,7 +156,7 @@ int main(){
             << "Name: " << player.getName() << endl
             << "Strength: " << player.getStrength() << endl
             << "Exercises Found: "  << exercises.getNumExercisesFound() << endl
-            << "Foods Found: " << endl;
+            << "Foods Found: " << foods.getNumFoodsFound() << endl;
         }
 
         else if (input == 6)
@@ -140,6 +171,8 @@ int main(){
             cin >> input;
         }
     }
+
+    //finalBattle();
 
     return 0;
 }
