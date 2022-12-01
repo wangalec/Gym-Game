@@ -1,6 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <cstdlib>
+#include <unistd.h>
+#include <stdlib.h>
+#include <ctime>
 using namespace std;
 
 //#include "Exercises.h"
@@ -13,17 +17,50 @@ using namespace std;
 #include "Map.h"
 //#include "finalbattle.h"
 
-
+void starter()
+{
+    cout << "ZYZZ welcomes you to the Gym Game designed by Alec Wang and Dorjee Zhang." << endl;
+    usleep(100000);
+    cout << "     ⣿⣿⣿⣿⠏⠌⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⣿⣿⣿⠀⠀⠸⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⣿⣿⠃⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⡿⠃⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⠃⠀⠀⣾⣿⣿⣿⣿⣿⣦⠀⠈⠻⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⠀⠀⠀⣿⣿⣿⠟⠉⠉⠉⢃⣤⠀⠈⢿⣿⣿" << endl;
+    cout << "     ⣿⠀⠀⠀⢸⣿⡟⠀⠀⠀⠀⢹⣿⣧⠀⠀⠙⣿" << endl;
+    cout << "     ⣿⡆⠀⠀⠈⠻⡅⠀⠀⠀⠀⣸⣿⠿⠇⠀⠀⢸" << endl;
+    cout << "     ⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠔⠛⠁⠀⠀⠀⣠⣿" << endl;
+    cout << "     ⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿" << endl;
+    cout << "     ⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "     ⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "  We're all gonna make it brah." << endl;
+    usleep(100000);
+    cout << "In this game, you wll discover exercises and foods that will increase your strength." << endl;
+    usleep(100000);
+    cout << "Each exercise you find will increase your strength by a specific value." << endl;
+    usleep(100000);
+    cout << "Each food you discover will also increase your strength. Be careful, sometimes foods can \e[1mdecrease\e[0m your strength" << endl;
+    usleep(100000);
+    cout << "Once your strength reaches a 100, you will fight the final boss." << endl;
+    usleep(100000);
+    cout << "You will now be taken to the game." << endl;
+}
 
 void menu()
 { //menu function
-    cout << "----Main Menu----" << endl;
-    cout << "1. Move" << endl;
-    cout << "2. Investigate" << endl;
-    cout << "3. Eat" << endl;
-    cout << "4. Train" << endl;
-    cout << "5. Display Stats" << endl;
-    cout << "6. Give up" << endl;
+    system("Color 0A");
+    cout << "=-------Main Menu------=" << endl;
+    cout << " | 1. Move            |" << endl;
+    cout << " | 2. Investigate     |" << endl;
+    cout << " | 3. Eat             |" << endl;
+    cout << " | 4. Train           |" << endl;
+    cout << " | 5. Display Stats   |" << endl;
+    cout << " | 6. Give up         |" << endl;
+    cout << " |ᕙ(=▀̿ĺ̯▀̿)ᕗ  ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ|" << endl;
+    system("Color 07");
 }
 
 int main(){
@@ -47,6 +84,8 @@ int main(){
     //for leaderboard
     int player_moves = 0;
 
+    starter();
+
     while (true)
     {
         if(player.getStrength() >= 100){
@@ -55,7 +94,6 @@ int main(){
         }
 
         player_moves++;
-
         map.displayMap();
         menu(); 
         cin >> input; 
@@ -69,6 +107,8 @@ int main(){
                 cin >> move_input;
                 if (move_input == 'w' || move_input == 'a' || move_input == 's' || move_input == 'd') {
                     break;
+                }
+                else{
                 }
             }
             map.move(move_input);
@@ -88,9 +128,9 @@ int main(){
             }
             else if (random_num == 1){
                 if (food_tracker == 5){
-                    cout << "You have discovered all foods! Keep it up!" << endl;
+                    cout << "Great job brah! You found every food!" << endl;
                 }
-                cout << "You have discovered a new food!" << endl;
+                cout << "Fuark yeah brah. Great job discovering new food!" << endl;
                 string name = foods.getAvailFoodName(food_tracker);
                 int strength = foods.getAvailFoodStrength(food_tracker);
                 foods.addFoods(name, strength);
@@ -100,7 +140,7 @@ int main(){
                 if(exercise_tracker == 10){
                     cout << "You have discovered all exercises! Keep it up!" << endl;
                 }
-                cout << "You have discovered a new exercise!" << endl;
+                cout << "Let's go chief! New Exercise found." << endl;
                 string name = exercises.getAvailExerciseName(exercise_tracker);
                 int strength = exercises.getAvailExerciseStrength(exercise_tracker);
                 exercises.addExercise(name, strength);
@@ -126,9 +166,20 @@ int main(){
                     << " | " << foods.getFoodStrength(i);
                 }
                 cin >> fd_input;
+                if ((fd_input > 0) && (fd_input < 6))
+                {
                 int new_strength = player.getStrength();
                 new_strength += foods.getFoodStrength(fd_input - 1);
                 player.setStrength(new_strength);
+                }
+                else{
+                    cout << "Invalid input, enter a number between 1 and 5" << endl;
+                    fd_input = 0;
+                    cin >> fd_input;
+                    int new_strength = player.getStrength();
+                    new_strength += foods.getFoodStrength(fd_input - 1);
+                    player.setStrength(new_strength);
+                }
             }
         }
 
@@ -146,9 +197,20 @@ int main(){
                     << " | " << exercises.getExerciseStrength(i) << " Strength" << endl;
                 }
                 cin >> ex_input;
+                if ((ex_input > 0) && (ex_input < 11))
+                {
                 int new_strength = player.getStrength();
                 new_strength += exercises.getExerciseStrength(ex_input - 1);
                 player.setStrength(new_strength);
+                }
+                else{
+                    cout << "Invalid input, enter a number between 1 and 10" << endl;
+                    ex_input = 0;
+                    cin >> ex_input;
+                    int new_strength = player.getStrength();
+                    new_strength += exercises.getExerciseStrength(ex_input - 1);
+                    player.setStrength(new_strength);
+                }
             }
         }
 
