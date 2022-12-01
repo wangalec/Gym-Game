@@ -9,16 +9,17 @@
 using namespace std;
 
 class NPC{
-    private: 
-    string name_;
+private:
     vector<string> voicelines_; 
 
-    public:
+public:
     NPC();
-    string getName();
-    void setName(string name);
+    //string getName();
+    //void setName(string name);
     string getVoicelineAt(int index);
     void setVoicelineAt(int index, string voiceline);
+    int getNumLines();
+    bool readNPC(string filename);
 };
 
 #endif

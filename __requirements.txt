@@ -1,4 +1,4 @@
-g++ --std=c++17 _main.cpp Map.cpp Exercises.cpp ExerciseDiscoveries.cpp Player.cpp Foods.cpp FoodDiscoveries.cpp finalBattle.h
+g++ --std=c++17 _main.cpp Map.cpp Exercises.cpp ExerciseDiscoveries.cpp Player.cpp Foods.cpp FoodDiscoveries.cpp finalBattle.h NPC.cpp
 
 [x] 2D Map
 [x] 4 Classes

@@ -50,7 +50,7 @@ void starter()
     usleep(100000);
     cout << "Once your strength reaches a 100, you will fight the final boss." << endl;
     usleep(100000);
-    cout << "You will now be taken to the game." << endl;
+    cout << "You will now be taken to the game." << endl << endl;
 }
 
 void menu()
@@ -61,7 +61,7 @@ void menu()
     cout << " | 2. Investigate     |" << endl;
     cout << " | 3. Eat             |" << endl;
     cout << " | 4. Train           |" << endl;
-    cout << " | 5. Display Stats   |" << endl;
+    cout << " | 5. Get Advice      |" << endl;
     cout << " | 6. Give up         |" << endl;
     cout << " |ᕙ(=▀̿ĺ̯▀̿)ᕗ  ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ|" << endl;
     system("Color 07");
@@ -73,9 +73,17 @@ int main(){
     ExerciseDiscoveries exercises;
     FoodDiscoveries foods;
     Player player;
+    NPC npc;
 
+    //set up all classes
     exercises.readExercises("exercises.txt");
     foods.readFoods("Foods.txt");
+    npc.readNPC("NPC.txt");
+
+    // cout << "Voicelines" << endl;
+    // for(int i = 0; i < 9; i++){
+    //     cout << i << " | " << npc.getVoicelineAt(i) << endl;
+    // }
 
     string input_name;
     cout << "Enter your name: " << endl;
@@ -98,8 +106,16 @@ int main(){
         }
 
         player_moves++;
-        map.displayMap();
+
+        cout << "STATS " << endl
+            << "Name: " << player.getName() << endl
+            << "Strength: " << player.getStrength() << endl
+            << "Exercises Found: "  << exercises.getNumExercisesFound() << endl
+            << "Foods Found: " << foods.getNumFoodsFound() << endl;
+        //map.displayMap();
         menu(); 
+
+
         cin >> input; 
             
         if (input == "1")//move
@@ -107,6 +123,7 @@ int main(){
             char move_input;
             while (true)
             {
+                map.displayMap();
                 cout << "Use wasd to move" << endl;
                 cin >> move_input;
                 if (move_input == 'w' || move_input == 'a' || move_input == 's' || move_input == 'd') {
@@ -116,11 +133,13 @@ int main(){
                 }
             }
             map.move(move_input);
+            cout << endl;
         }
 
         //RANDOM COMPONENT
         else if (input == "2") //investigate
         {
+            map.displayMap();
             int random_num = rand()%3;
 
             //testing
@@ -154,6 +173,7 @@ int main(){
             //     cout << "You have met an NPC!" << endl;
             // }
             map.exploreSpace(map.getPlayerRow(), map.getPlayerCol());
+            cout << endl;
         }
 
         else if (input == "3") //eat
@@ -185,6 +205,7 @@ int main(){
                     player.setStrength(new_strength);
                 }
             }
+            cout << endl;
         }
 
         else if (input == "4") //train
@@ -216,15 +237,14 @@ int main(){
                     player.setStrength(new_strength);
                 }
             }
+            cout << endl;
         }
-
-        else if (input == "5") //display stats
+        //random component
+        else if (input == "5") //get advice
         {
-            cout << "Your STATS: " << endl
-            << "Name: " << player.getName() << endl
-            << "Strength: " << player.getStrength() << endl
-            << "Exercises Found: "  << exercises.getNumExercisesFound() << endl
-            << "Foods Found: " << foods.getNumFoodsFound() << endl;
+            int num = rand()%npc.getNumLines();
+            cout << "Everyone needs guidance in their journey. Read the next message closely" << endl;
+            cout << npc.getVoicelineAt(num) << endl << endl;
         }
 
         else if (input == "6")
@@ -234,7 +254,7 @@ int main(){
         }
 
         else if (input == "OVERRIDE"){
-            player_moves = rand()%40;
+            player_moves = rand()%50;
             player.setStrength(101);
         }
         else 
