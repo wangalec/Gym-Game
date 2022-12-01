@@ -1,3 +1,6 @@
+// CSCI 1300 Final Project | CYO
+// Alec and Dorjee's Gym Game
+
 #ifndef FOODS_H
 #define FOODS_H
 

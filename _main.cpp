@@ -1,3 +1,7 @@
+// CSCI 1300 Final Project | CYO
+// Alec and Dorjee's Gym Game
+
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -15,7 +19,7 @@ using namespace std;
 #include "NPC.h"
 #include "Player.h"
 #include "Map.h"
-//#include "finalbattle.h"
+#include "finalbattle.h"
 
 void starter()
 {
@@ -230,7 +234,7 @@ int main(){
         }
 
         else if (input == "OVERRIDE"){
-            player_moves = rand()%20;
+            player_moves = rand()%40;
             player.setStrength(101);
         }
         else 
@@ -240,7 +244,7 @@ int main(){
         }
     }
 
-        //finalBattle();
+    finalBattle();
 
     int score = 100 - player_moves + foods.getNumFoodsFound() + exercises.getNumExercisesFound();
     if(score < 0) score = 0;

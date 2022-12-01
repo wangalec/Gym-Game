@@ -1,3 +1,6 @@
+// CSCI 1300 Final Project | CYO
+// Alec and Dorjee's Gym Game
+
 #ifndef EXERCISES_D_H
 #define EXERCISES_D_H
 
