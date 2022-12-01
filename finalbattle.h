@@ -648,7 +648,7 @@ cout << " " << endl;
 }
 health = 250;
 }
-while (health == 250)
+if (health == 250)
 {
 usleep(100500);
 cout << "\e[1mSeeing your determination and power, Nikocado is fearful and lowers his guard! -250hp\e[0m" << endl;
@@ -715,6 +715,15 @@ cout << " " << endl;
 usleep(2000000);
 cout << "Thank you for playing the gym game by Alec Wang and Dorjee Zhang!" << endl;
 return 0;
+}
+else
+{
+    health = 0;
+    cout << "Nikocado has collapsed from a heart attack and died." << endl;
+    cout << "You win!" << endl;
+    usleep(2000000);
+    cout << "Thank you for playing the gym game by Alec Wang and Dorjee Zhang!" << endl;
+    return 0;
 }
 }
 }
