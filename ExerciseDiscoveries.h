@@ -11,11 +11,6 @@ using namespace std;
 class ExerciseDiscoveries{
     
 private: 
-    // Food foods_[5]; 
-    // int num_foods_;
-
-    // Food found_foods_[5];
-    // int num_foods_found_;
 
     //possbile exercises
     Exercises exercises_[10];
@@ -27,12 +22,6 @@ private:
 
 
 public: 
-    // string getFood(int index);
-    // bool addFood(string food, int index);
-    
-    // int readFoods(string filename);
-
-
     //exercises
 
     ExerciseDiscoveries();

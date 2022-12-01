@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <vector>
 using namespace std;
 
 //#include "Exercises.h"
@@ -31,21 +33,19 @@ int main(){
     FoodDiscoveries foods;
     Player player;
 
-    int result = exercises.readExercises("exercises.txt");
+    exercises.readExercises("exercises.txt");
     foods.readFoods("Foods.txt");
-    // cout << result << endl;
-    // for(int i = 0; i < 10; i++){
-    //     cout << i << exercises.getAvailExerciseName(i) << endl;
-    // }
 
-    // string input_name;
-    // cout << "Enter your name: " << endl;
-    // cin >> input_name;
-    // player.setName(input_name);
+    string input_name;
+    cout << "Enter your name: " << endl;
+    cin >> input_name;
+    player.setName(input_name);
 
-    int input;
+    string input;
     int exercise_tracker = 0;
     int food_tracker = 0;
+    //for leaderboard
+    int player_moves = 0;
 
     while (true)
     {
@@ -54,11 +54,13 @@ int main(){
             break;
         }
 
+        player_moves++;
+
         map.displayMap();
         menu(); 
         cin >> input; 
             
-        if (input == 1)//move
+        if (input == "1")//move
         {   
             char move_input;
             while (true)
@@ -73,7 +75,7 @@ int main(){
         }
 
         //RANDOM COMPONENT
-        else if (input == 2) //investigate
+        else if (input == "2") //investigate
         {
             int random_num = rand()%3;
 
@@ -110,7 +112,7 @@ int main(){
             map.exploreSpace(map.getPlayerRow(), map.getPlayerCol());
         }
 
-        else if (input == 3) //eat
+        else if (input == "3") //eat
         {
             int num_foods = foods.getNumFoodsFound();
             if(num_foods == 0){
@@ -130,7 +132,7 @@ int main(){
             }
         }
 
-        else if (input == 4) //train
+        else if (input == "4") //train
         {   
             int num_exercises = exercises.getNumExercisesFound();
             if (num_exercises == 0){
@@ -150,7 +152,7 @@ int main(){
             }
         }
 
-        else if (input == 5) //display stats
+        else if (input == "5") //display stats
         {
             cout << "Your STATS: " << endl
             << "Name: " << player.getName() << endl
@@ -159,12 +161,16 @@ int main(){
             << "Foods Found: " << foods.getNumFoodsFound() << endl;
         }
 
-        else if (input == 6)
+        else if (input == "6")
         {
             cout << "ZYZZ is disappointed you gave up. Come back soon to complete your training." << endl;
             break;
         }
 
+        else if (input == "OVERRIDE"){
+            player_moves = rand()%20;
+            player.setStrength(101);
+        }
         else 
         {
             cout << "What the Fuark brah? Enter a number between 1 and 6!" << endl;
@@ -172,7 +178,58 @@ int main(){
         }
     }
 
-    //finalBattle();
+        //finalBattle();
+
+    int score = 100 - player_moves + foods.getNumFoodsFound() + exercises.getNumExercisesFound();
+    if(score < 0) score = 0;
+
+    struct leaderboard{
+        string name;
+        int score;
+    };
+
+    vector<leaderboard> players;
+
+    ofstream file("leaderboard.txt", ios::app);
+    //file.open("leaderboard.txt");
+    file << player.getName() << "," << score << "\n";
+    file.close();
+
+    ifstream file_read;
+    string line;
+    file_read.open("leaderboard.txt");
+    while(getline(file_read, line)){
+        if(line.empty()) continue;
+        string arr[2];
+        for(int i = 0; i < line.length(); i++){
+            if(line[i] == ','){
+                arr[0] = line.substr(0,i);
+                arr[1] = line.substr(i+1, line.length() - i - 1);
+            }
+        }
+        leaderboard temp;
+        temp.name = arr[0];
+        temp.score = stoi(arr[1]);
+        players.push_back(temp);
+    }
+
+    //bubblesort!
+    int length = players.size();
+    for(int i = 0; i < length - 1; i++){
+        for(int j = 0; j < length - i - 1; j++){
+            if(players.at(j).score < players.at(j+1).score){
+                leaderboard temp = players.at(j);
+                players.at(j) = players.at(j+1);
+                players.at(j+1) = temp;
+                //swap(players[j], players[j+1]);
+            }
+        }
+    }
+
+    cout << "LEADERBOARD" << endl;
+    for(int i = 0; i < length; i++){
+        cout << "Name: " << players.at(i).name << " Score: " << players.at(i).score << endl;
+    }
 
     return 0;
 }

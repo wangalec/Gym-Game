@@ -1,16 +1,16 @@
 g++ --std=c++17 _main.cpp Map.cpp Exercises.cpp ExerciseDiscoveries.cpp Player.cpp Foods.cpp FoodDiscoveries.cpp
 
 [x] 2D Map
-[] 4 Classes
-[] At least 2 Classes with 4+ datamembers
-[] A class with an array/vector of another class
-[] Appropriate methods for each class
+[x] 4 Classes
+[x] At least 2 Classes with 4+ datamembers
+[x] A class with an array/vector of another class
+[x] Appropriate methods for each class
 [] 6+ if/else statements
 [] 6+ loops
-[] 2+ nested loops
-[] File IO
+[x] 2+ nested loops
+[x] File IO
 [] Sorting
-[] Final Battle
+[x] Final Battle
 [] Persistent Scoreboard
 [] Resurrection
 
