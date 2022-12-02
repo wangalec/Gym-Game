@@ -95,7 +95,7 @@ int main(){
     int exercise_tracker = 0;
     int food_tracker = 0;
     //for leaderboard
-    int player_moves = 0;
+    int player_moves = -1;
 
     starter();
 
@@ -113,7 +113,8 @@ int main(){
             << " |Your name is: " << player.getName() << ""<< endl
             << " |Current Strength is: " << player.getStrength() << "" << endl
             << " |Exercises: "  << exercises.getNumExercisesFound() << "" << endl
-            << " |Foods: " << foods.getNumFoodsFound() << "" << endl;
+            << " |Foods: " << foods.getNumFoodsFound() << "" << endl
+            << " |Number of Moves: " << player_moves << endl;
         cout << " |ʕっ•ᴥ•ʔっ ( •͡˘ _•͡˘)" << endl;
         cout << " " << endl;
         //map.displayMap();
@@ -149,34 +150,33 @@ int main(){
                 continue;
             }
             map.displayMap();
-            int random_num = rand()%3;
+            int random_num = rand()%100;
 
-            if (random_num == 0){
-                cout << "You have found nothing. Keep grinding brah don't give up" << endl;
-            }
-            else if (random_num == 1){
+            if (random_num >= 0 && random_num <= 20){ //20 percent chance of finding food
                 if (food_tracker == 5){
                     cout << "Great job brah! You found every food!" << endl;
                 }
-                cout << "Fuark yeah brah. Great job discovering new food!" << endl;
                 string name = foods.getAvailFoodName(food_tracker);
                 int strength = foods.getAvailFoodStrength(food_tracker);
                 foods.addFoods(name, strength);
                 food_tracker++;
+                cout << "Fuark yeah brah. Great job discovering new food!" << endl;
+                cout << "You have discovered " << name << " that has strength " << strength << endl;
             }
-            else if (random_num == 2){
+            else if (random_num > 20 && random_num <=50){ //30 percent chance of finding an exercise
                 if(exercise_tracker == 10){
                     cout << "You have discovered all exercises! Keep it up!" << endl;
                 }
-                cout << "Let's go chief! New Exercise found." << endl;
                 string name = exercises.getAvailExerciseName(exercise_tracker);
                 int strength = exercises.getAvailExerciseStrength(exercise_tracker);
                 exercises.addExercise(name, strength);
                 exercise_tracker++;
+                cout << "Let's go chief! New Exercise found." << endl;
+                cout << "You have discovered " << name << " that gives you strength " << strength << endl;
             }
-            // else if (random_num == 3){
-            //     cout << "You have met an NPC!" << endl;
-            // }
+            else{ //50% chance of finding nothing
+                cout << "You have found nothing. Keep grinding brah don't give up" << endl;
+            }
             map.exploreSpace(map.getPlayerRow(), map.getPlayerCol());
             cout << endl;
         }
@@ -201,6 +201,8 @@ int main(){
                         int new_strength = player.getStrength();
                         new_strength += foods.getFoodStrength(fd_input - 1);
                         player.setStrength(new_strength);
+                        cout << "You satisfied your hunger with " << foods.getFoodName(fd_input - 1) <<
+                        " that gave you strength " << foods.getFoodStrength(fd_input - 1) << endl;
                         break;
                     }
                     else{
@@ -232,6 +234,8 @@ int main(){
                     int new_strength = player.getStrength();
                     new_strength += exercises.getExerciseStrength(ex_input - 1);
                     player.setStrength(new_strength);
+                    cout << "Your set of " << exercises.getExerciseName(ex_input - 1)
+                    << " has increase your strength by " << exercises.getExerciseStrength(ex_input -1 ) << endl;
                     break;
                 }
                 else{
