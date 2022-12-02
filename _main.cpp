@@ -140,6 +140,10 @@ int main(){
         //RANDOM COMPONENT
         else if (input == "2") //investigate
         {
+            if(map.isExplored(map.getPlayerRow(), map.getPlayerCol())){
+                cout << "You have already explored this space. Explore a different space by moving!" << endl;
+                continue;
+            }
             map.displayMap();
             int random_num = rand()%3;
 
