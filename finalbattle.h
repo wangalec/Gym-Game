@@ -651,7 +651,7 @@ health = 250;
 if (health == 250)
 {
 usleep(100500);
-cout << "\e[1mSeeing your determination and power, Nikocado is fearful and lowers his guard! -250hp\e[0m" << endl;
+cout << "\e[1mSeeing your determination and power, Nikocado is fearful and lowers his guard! -500hp\e[0m" << endl;
 health = 0;
 cout << "Nikocado:" << flush;
 usleep(100000);

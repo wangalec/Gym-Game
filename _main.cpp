@@ -23,34 +23,34 @@ using namespace std;
 
 void starter()
 {
-    cout << "ZYZZ welcomes you to the Gym Game designed by Alec Wang and Dorjee Zhang." << endl;
-    usleep(100000);
-    cout << "     ⣿⣿⣿⣿⠏⠌⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⣿⣿⣿⠀⠀⠸⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⣿⣿⠃⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⡿⠃⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⠃⠀⠀⣾⣿⣿⣿⣿⣿⣦⠀⠈⠻⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⠀⠀⠀⣿⣿⣿⠟⠉⠉⠉⢃⣤⠀⠈⢿⣿⣿" << endl;
-    cout << "     ⣿⠀⠀⠀⢸⣿⡟⠀⠀⠀⠀⢹⣿⣧⠀⠀⠙⣿" << endl;
-    cout << "     ⣿⡆⠀⠀⠈⠻⡅⠀⠀⠀⠀⣸⣿⠿⠇⠀⠀⢸" << endl;
-    cout << "     ⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠔⠛⠁⠀⠀⠀⣠⣿" << endl;
-    cout << "     ⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿" << endl;
-    cout << "     ⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿" << endl;
-    cout << "     ⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿" << endl;
-    cout << "  We're all gonna make it brah." << endl;
-    usleep(100000);
+    cout << "       ZYZZ welcomes you to the Gym Game designed by Alec Wang and Dorjee Zhang." << endl;
+    usleep(1000000);
+    cout << "                               ⣿⣿⣿⣿⠏⠌⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⣿⣿⣿⠀⠀⠸⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⣿⣿⠃⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⡿⠃⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⠃⠀⠀⣾⣿⣿⣿⣿⣿⣦⠀⠈⠻⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⠀⠀⠀⣿⣿⣿⠟⠉⠉⠉⢃⣤⠀⠈⢿⣿⣿" << endl;
+    cout << "                               ⣿⠀⠀⠀⢸⣿⡟⠀⠀⠀⠀⢹⣿⣧⠀⠀⠙⣿" << endl;
+    cout << "                               ⣿⡆⠀⠀⠈⠻⡅⠀⠀⠀⠀⣸⣿⠿⠇⠀⠀⢸" << endl;
+    cout << "                               ⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠔⠛⠁⠀⠀⠀⣠⣿" << endl;
+    cout << "                               ⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿" << endl;
+    cout << "                               ⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "                               ⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿" << endl;
+    cout << "                          We're all gonna make it brah." << endl;
+    usleep(4199999);
     cout << "In this game, you wll discover exercises and foods that will increase your strength." << endl;
-    usleep(100000);
+    usleep(5000000);
     cout << "Each exercise you find will increase your strength by a specific value." << endl;
-    usleep(100000);
+    usleep(5000000);
     cout << "Each food you discover will also increase your strength. Be careful, sometimes foods can \e[1mdecrease\e[0m your strength" << endl;
-    usleep(100000);
-    cout << "Once your strength reaches a 100, you will fight the final boss." << endl;
-    usleep(100000);
-    cout << "You will now be taken to the game." << endl << endl;
+    usleep(6000000);
+    cout << "Once your strength reaches level 100, you will fight the final boss." << endl;
+    usleep(3000000);
+    cout << "You will now be taken to the main menu." << endl << endl;
 }
 
 void menu()
@@ -63,7 +63,7 @@ void menu()
     cout << " | 4. Train           |" << endl;
     cout << " | 5. Get Advice      |" << endl;
     cout << " | 6. Give up         |" << endl;
-    cout << " |ᕙ(=▀̿ĺ̯▀̿)ᕗ  ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ|" << endl;
+    cout << " |ᕙ(=▀̿ĺ̯▀̿)ᕗ  ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ  |" << endl;
     //system("Color 07");
 }
 
@@ -88,6 +88,7 @@ int main(){
     string input_name;
     cout << "Enter your name: " << endl;
     cin >> input_name;
+    cout << "" << endl;
     player.setName(input_name);
 
     string input;
@@ -107,11 +108,12 @@ int main(){
 
         player_moves++;
 
-        cout << "STATS " << endl
-            << "Name: " << player.getName() << endl
-            << "Strength: " << player.getStrength() << endl
-            << "Exercises Found: "  << exercises.getNumExercisesFound() << endl
-            << "Foods Found: " << foods.getNumFoodsFound() << endl;
+        cout << "                STATS " << endl
+            << "Your name is: " << player.getName() << endl
+            << "Current Strength is: " << player.getStrength() << endl
+            << "You have: "  << exercises.getNumExercisesFound() << " exercises found. Keep grinding!" << endl
+            << "You have: " << foods.getNumFoodsFound() << " foods found. Keep grinding!" << endl;
+        cout << " " << endl;
         //map.displayMap();
         menu(); 
 
@@ -201,7 +203,7 @@ int main(){
                     }
                     else{
                         cout << "Invalid input, enter a number for a food that you've found" << endl;
-                        cin >> input;
+                        cin >> fd_input;
                     }
                 }
             }
@@ -222,20 +224,19 @@ int main(){
                     << " | " << exercises.getExerciseStrength(i) << " Strength" << endl;
                 }
                 cin >> ex_input;
+                while(true){
                 if ((ex_input > 0) && (ex_input < 11))
                 {
-                int new_strength = player.getStrength();
-                new_strength += exercises.getExerciseStrength(ex_input - 1);
-                player.setStrength(new_strength);
-                }
-                else{
-                    cout << "Invalid input, enter a number between 1 and 10" << endl;
-                    ex_input = 0;
-                    cin >> ex_input;
                     int new_strength = player.getStrength();
                     new_strength += exercises.getExerciseStrength(ex_input - 1);
                     player.setStrength(new_strength);
+                    break;
                 }
+                else{
+                    cout << "Invalid input, enter a number for an exercise you have already discovered." << endl;
+                    cin >> ex_input;
+                }
+            }
             }
             cout << endl;
         }
@@ -250,7 +251,7 @@ int main(){
         else if (input == "6")
         {
             cout << "ZYZZ is disappointed you gave up. Come back soon to complete your training." << endl;
-            break;
+            return 0;
         }
 
         else if (input == "OVERRIDE"){
