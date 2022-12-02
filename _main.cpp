@@ -141,15 +141,11 @@ int main(){
         else if (input == "2") //investigate
         {
             if(map.isExplored(map.getPlayerRow(), map.getPlayerCol())){
-                cout << "You have already explored this space. Explore a different space by moving!" << endl;
+                cout << "You have already explored this space. Explore a different space by moving!" << endl << endl;
                 continue;
             }
             map.displayMap();
             int random_num = rand()%3;
-
-            //testing
-            //random_num = 2;
-            //cout << random_num << endl;
 
             if (random_num == 0){
                 cout << "You have found nothing. Keep grinding brah don't give up" << endl;
