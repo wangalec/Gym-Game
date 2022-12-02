@@ -55,7 +55,7 @@ void starter()
 
 void menu()
 { //menu function
-    system("Color 0A");
+    //system("Color 0A");
     cout << "=-------Main Menu------=" << endl;
     cout << " | 1. Move            |" << endl;
     cout << " | 2. Investigate     |" << endl;
@@ -64,7 +64,7 @@ void menu()
     cout << " | 5. Get Advice      |" << endl;
     cout << " | 6. Give up         |" << endl;
     cout << " |ᕙ(=▀̿ĺ̯▀̿)ᕗ  ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ|" << endl;
-    system("Color 07");
+    //system("Color 07");
 }
 
 int main(){
@@ -130,6 +130,7 @@ int main(){
                     break;
                 }
                 else{
+                    cout << "Wrong key, try again" << endl;
                 }
             }
             map.move(move_input);
@@ -183,26 +184,25 @@ int main(){
                 cout << "No foods yet. Explore the map to find new foods!" << endl;
             }
             else{
-                int fd_input;
                 cout << "Pick a food: " << endl;
                 for(int i = 0; i < num_foods; i++){
                     cout << i+1 << " . " << foods.getFoodName(i)
-                    << " | " << foods.getFoodStrength(i);
+                    << " | " << foods.getFoodStrength(i) << endl;
                 }
+                int fd_input;
                 cin >> fd_input;
-                if ((fd_input > 0) && (fd_input < 6))
-                {
-                int new_strength = player.getStrength();
-                new_strength += foods.getFoodStrength(fd_input - 1);
-                player.setStrength(new_strength);
-                }
-                else{
-                    cout << "Invalid input, enter a number between 1 and 5" << endl;
-                    fd_input = 0;
-                    cin >> fd_input;
-                    int new_strength = player.getStrength();
-                    new_strength += foods.getFoodStrength(fd_input - 1);
-                    player.setStrength(new_strength);
+                while(true){
+                    if ((fd_input > 0) && (fd_input < 6))
+                    {
+                        int new_strength = player.getStrength();
+                        new_strength += foods.getFoodStrength(fd_input - 1);
+                        player.setStrength(new_strength);
+                        break;
+                    }
+                    else{
+                        cout << "Invalid input, enter a number for a food that you've found" << endl;
+                        cin >> input;
+                    }
                 }
             }
             cout << endl;
