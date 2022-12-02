@@ -46,7 +46,7 @@ void starter()
     usleep(5000000);
     cout << "Each exercise you find will increase your strength by a specific value." << endl;
     usleep(5000000);
-    cout << "Each food you discover will also increase your strength. Be careful, sometimes foods can \e[1mdecrease\e[0m your strength" << endl;
+    cout << "Each food you discover will also increase your strength. Sometimes, foods won't affect your strength." << endl;
     usleep(6000000);
     cout << "Once your strength reaches level 100, you will fight the final boss." << endl;
     usleep(3000000);
@@ -63,7 +63,7 @@ void menu()
     cout << " | 4. Train           |" << endl;
     cout << " | 5. Get Advice      |" << endl;
     cout << " | 6. Give up         |" << endl;
-    cout << " |ᕙ(=▀̿ĺ̯▀̿)ᕗ  ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ  |" << endl;
+    cout << " |ᕙ(=▀̿ĺ̯▀̿)ᕗ  ᕙ(▀̿ĺ̯▀̿ ̿)ᕗ  |" << endl << endl;
     //system("Color 07");
 }
 
@@ -108,11 +108,13 @@ int main(){
 
         player_moves++;
 
-        cout << "                STATS " << endl
-            << "Your name is: " << player.getName() << endl
-            << "Current Strength is: " << player.getStrength() << endl
-            << "You have: "  << exercises.getNumExercisesFound() << " exercises found. Keep grinding!" << endl
-            << "You have: " << foods.getNumFoodsFound() << " foods found. Keep grinding!" << endl;
+        cout << endl;
+        cout << "=----------STATS---------=" << endl
+            << " |Your name is: " << player.getName() << ""<< endl
+            << " |Current Strength is: " << player.getStrength() << "" << endl
+            << " |Exercises: "  << exercises.getNumExercisesFound() << "" << endl
+            << " |Foods: " << foods.getNumFoodsFound() << "" << endl;
+        cout << " |ʕっ•ᴥ•ʔっ ( •͡˘ _•͡˘)" << endl;
         cout << " " << endl;
         //map.displayMap();
         menu(); 
@@ -265,7 +267,7 @@ int main(){
         }
     }
 
-    finalBattle();
+    //finalBattle();
 
     int score = 100 - player_moves + foods.getNumFoodsFound() + exercises.getNumExercisesFound();
     if(score < 0) score = 0;
@@ -312,10 +314,10 @@ int main(){
             }
         }
     }
-
+    cout << endl;
     cout << "LEADERBOARD" << endl;
     for(int i = 0; i < length; i++){
-        cout << "Name: " << players.at(i).name << " Score: " << players.at(i).score << endl;
+        cout << "Name: " << players.at(i).name << " | Score: " << players.at(i).score << endl;
     }
 
     return 0;
