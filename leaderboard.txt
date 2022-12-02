@@ -4,3 +4,5 @@ test3,67
 test4,93
 Chestbrah,99
 Test5,93
+chestbrah,72
+Chestbrah,93

@@ -271,7 +271,7 @@ int main(){
         }
     }
 
-    //finalBattle();
+    finalBattle();
 
     int score = 100 - player_moves + foods.getNumFoodsFound() + exercises.getNumExercisesFound();
     if(score < 0) score = 0;
